@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pythonflask
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: www.local.host
+    http:
+      paths:
+      - path: /beta
+        backend:
+          serviceName: pythonflask-beta
+          servicePort: 5000
+      - path: /v1
+        backend:
+          serviceName: pythonflask-v1
+          servicePort: 5001
+      - path: /v2
+        backend:
+           serviceName: pythonflask-v2
+           servicePort: 5002
+
