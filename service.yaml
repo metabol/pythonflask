@@ -1,11 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: pythonflask-beta
+  name: pythonflask
 spec:
   selector:
     app: pythonflask
-    version: beta
   ports:
   - protocol: TCP
     port: 5000
