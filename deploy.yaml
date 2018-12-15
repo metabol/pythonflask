@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: pythonflask-v2
+  name: pythonflask-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pythonflask-v2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: pythonflask-v2
+    spec:
+      containers:
+      - image: pythonflask:v2
+        name: pythonflask-v2
+        ports:
+        - containerPort: 5000
