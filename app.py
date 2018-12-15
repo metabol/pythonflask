@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Flask Dockerized v1.0'
+    return 'Flask Dockerized v2.0'
 
 
 #Serve traffic on localhost:5000
