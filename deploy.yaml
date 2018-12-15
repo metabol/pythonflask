@@ -4,7 +4,7 @@ metadata:
   labels:
     version: v1
     app: pythonflask
-    name: pythonflask
+    name: pythonflask_v1
 spec:
   replicas: 1
   selector:
@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - image: pythonflask:v1
-        name: pythonflask
+        name: pythonflask_v1
         ports:
         - containerPort: 5000
