@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pythonflask-canary
+  labels:
+    app: pythonflask-canary
+spec:
+  ports:
+  - port: 5000
+  selector:
+    app: pythonflask-canary
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pythonflask-canary-v1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pythonflask-canary
+        version: v1
+    spec:
+      containers:
+      - name: pythonflask-canary
+        image: pythonflask:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pythonflask-canary-v2
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pythonflask-canary
+        version: v2
+    spec:
+      containers:
+      - name: pythonflask-canary
+        image: pythonflask:v2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000

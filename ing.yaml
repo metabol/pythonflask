@@ -21,4 +21,8 @@ spec:
         backend:
            serviceName: pythonflask-v2
            servicePort: 5000
+      - path: /canary
+        backend:
+           serviceName: pythonflask-canary
+           servicePort: 5000
 
