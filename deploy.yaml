@@ -2,18 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: pythonflask
-  name: pythonflask
+    app: pythonflask-canary
+  name: pythonflask-canary
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pythonflask
+      app: pythonflask-canary
   strategy: {}
   template:
     metadata:
       labels:
-        app: pythonflask
+        app: pythonflask-canary
     spec:
       containers:
       - image: pythonflask:beta

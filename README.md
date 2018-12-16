@@ -1,8 +1,7 @@
-# Simple Python 3.71 flask app
+# Simple Python 3.71 flask app With K8s Ingress Blue-Green Deployment
 
-docker build -t pythonflask:latest .
+docker build -t pythonflask .
 
-docker run -d --name pythonflask -p 5000:5000 pythonflask:latest
 
 -------------------------------------------------
 This container will serve Traffic on localhost:5000
