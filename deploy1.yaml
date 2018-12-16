@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: pythonflask-canary
+  name: pythonflask-canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pythonflask-canary
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: pythonflask-canary
+    spec:
+      containers:
+      - image: pythonflask:v1
+        name: pythonflask
+        ports:
+        - containerPort: 5000
